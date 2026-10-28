@@ -7,6 +7,13 @@ import { publicPlatformScript } from "./publicConfig";
 import { appRouter } from "../routers";
 import { createContext } from "./context";
 import { serveStatic, setupVite } from "./vite";
+import adminCatalog from "../../api/admin/catalog";
+import adminData from "../../api/admin/data";
+import adminLogin from "../../api/admin/login";
+import adminLogout from "../../api/admin/logout";
+import adminOffers from "../../api/admin/offers";
+import adminUploadUrl from "../../api/admin/upload-url";
+import analytics from "../../api/analytics";
 
 async function startServer() {
   const app = express();
@@ -18,6 +25,13 @@ async function startServer() {
   app.get("/api/platform/config.js", (_req, res) => {
     res.set("Cache-Control", "no-store").type("application/javascript").send(publicPlatformScript());
   });
+  app.all("/api/admin/login", adminLogin);
+  app.all("/api/admin/logout", adminLogout);
+  app.all("/api/admin/data", adminData);
+  app.all("/api/admin/catalog", adminCatalog);
+  app.all("/api/admin/offers", adminOffers);
+  app.all("/api/admin/upload-url", adminUploadUrl);
+  app.all("/api/analytics", analytics);
   registerOAuthRoutes(app);
   // tRPC API
   app.use(
