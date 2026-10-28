@@ -140,7 +140,7 @@ export default function Home() {
                   return <section className="portal-category" key={category.id}>
                     <div className="portal-category-heading"><span className={`portal-category-icon portal-category-icon-${category.icon_key}`}><Icon size={21} /></span><div><span className="portal-kicker">{category.kicker || "خدمات المكتب"}</span><h3>{category.name}</h3><p>{category.description}</p></div><span className="portal-category-index">0{index + 1}</span></div>
                     <div className="portal-service-list">
-                      {items.map(service => <a className="portal-service-link" href={serviceUrl(service.name)} key={service.id} onClick={() => trackPublicEvent({ event_type: "service_click", label: service.name, ...(service.id.startsWith("default-") ? {} : { service_id: service.id }) })}>
+                      {items.map(service => <a className={`portal-service-link portal-service-link-${category.icon_key}`} href={serviceUrl(service.name)} key={service.id} onClick={() => trackPublicEvent({ event_type: "service_click", label: service.name, ...(service.id.startsWith("default-") ? {} : { service_id: service.id }) })}>
                         <span className="portal-service-check"><Check size={14} /></span><span className="portal-service-text"><strong>{service.name}</strong>{service.description && <small>{service.description}</small>}</span><span className="portal-service-action"><MessageCircle size={16} /> واتساب</span><ArrowLeft className="portal-service-arrow" size={16} />
                       </a>)}
                     </div>
