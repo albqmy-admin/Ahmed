@@ -1,6 +1,6 @@
 import { createHmac, createHash, timingSafeEqual } from "node:crypto";
-import type { ApiRequest, ApiResponse } from "./http";
-import { clientIpKey, json, sameOrigin } from "./http";
+import type { ApiRequest, ApiResponse } from "./http.js";
+import { clientIpKey, json, sameOrigin } from "./http.js";
 
 const COOKIE_NAME = "albugmi2_admin_session";
 const SESSION_SECONDS = 8 * 60 * 60;

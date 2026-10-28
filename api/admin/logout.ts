@@ -1,6 +1,6 @@
-import type { ApiRequest, ApiResponse } from "../_lib/http";
-import { json, sameOrigin } from "../_lib/http";
-import { clearAdminCookie } from "../_lib/admin-auth";
+import type { ApiRequest, ApiResponse } from "../_lib/http.js";
+import { json, sameOrigin } from "../_lib/http.js";
+import { clearAdminCookie } from "../_lib/admin-auth.js";
 
 export default function logout(req: ApiRequest, res: ApiResponse): void {
   res.setHeader("Cache-Control", "no-store, max-age=0");

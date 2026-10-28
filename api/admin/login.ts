@@ -1,7 +1,7 @@
-import type { ApiRequest, ApiResponse } from "../_lib/http";
-import { bodyObject, json, sameOrigin, stringField } from "../_lib/http";
-import { adminIpFingerprint, hasAdminCode, setAdminCookie, verifyAccessCode } from "../_lib/admin-auth";
-import { createAdminSupabase, hasAdminSupabaseConfig } from "../_lib/supabase";
+import type { ApiRequest, ApiResponse } from "../_lib/http.js";
+import { bodyObject, json, sameOrigin, stringField } from "../_lib/http.js";
+import { adminIpFingerprint, hasAdminCode, setAdminCookie, verifyAccessCode } from "../_lib/admin-auth.js";
+import { createAdminSupabase, hasAdminSupabaseConfig } from "../_lib/supabase.js";
 
 function lockedResponse(res: ApiResponse, seconds: number): void {
   const minutes = Math.max(1, Math.ceil(seconds / 60));

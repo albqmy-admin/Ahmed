@@ -1,6 +1,6 @@
-import type { ApiRequest, ApiResponse } from "./_lib/http";
-import { bodyObject, clientIpKey, empty, isUuid, json, sameOrigin, stringField } from "./_lib/http";
-import { createAdminSupabase } from "./_lib/supabase";
+import type { ApiRequest, ApiResponse } from "./_lib/http.js";
+import { bodyObject, clientIpKey, empty, isUuid, json, sameOrigin, stringField } from "./_lib/http.js";
+import { createAdminSupabase } from "./_lib/supabase.js";
 
 const buckets = new Map<string, { count: number; resetAt: number }>();
 const allowedTypes = new Set(["page_view", "service_click", "offer_click", "search"]);

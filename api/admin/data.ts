@@ -1,7 +1,7 @@
-import type { ApiRequest, ApiResponse } from "../_lib/http";
-import { json } from "../_lib/http";
-import { requireAdmin } from "../_lib/admin-auth";
-import { createAdminSupabase } from "../_lib/supabase";
+import type { ApiRequest, ApiResponse } from "../_lib/http.js";
+import { json } from "../_lib/http.js";
+import { requireAdmin } from "../_lib/admin-auth.js";
+import { createAdminSupabase } from "../_lib/supabase.js";
 
 export default async function adminData(req: ApiRequest, res: ApiResponse): Promise<void> {
   res.setHeader("Cache-Control", "no-store, max-age=0");

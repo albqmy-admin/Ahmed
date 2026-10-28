@@ -1,8 +1,8 @@
 import { randomUUID } from "node:crypto";
-import type { ApiRequest, ApiResponse } from "../_lib/http";
-import { bodyObject, json, stringField } from "../_lib/http";
-import { requireAdmin } from "../_lib/admin-auth";
-import { createAdminSupabase, OFFER_BUCKET } from "../_lib/supabase";
+import type { ApiRequest, ApiResponse } from "../_lib/http.js";
+import { bodyObject, json, stringField } from "../_lib/http.js";
+import { requireAdmin } from "../_lib/admin-auth.js";
+import { createAdminSupabase, OFFER_BUCKET } from "../_lib/supabase.js";
 
 const MIME_EXTENSIONS: Record<string, string> = {
   "image/jpeg": "jpg",

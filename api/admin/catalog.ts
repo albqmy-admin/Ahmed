@@ -1,7 +1,7 @@
-import type { ApiRequest, ApiResponse, JsonObject } from "../_lib/http";
-import { bodyObject, isUuid, json, stringField } from "../_lib/http";
-import { requireAdmin } from "../_lib/admin-auth";
-import { createAdminSupabase } from "../_lib/supabase";
+import type { ApiRequest, ApiResponse, JsonObject } from "../_lib/http.js";
+import { bodyObject, isUuid, json, stringField } from "../_lib/http.js";
+import { requireAdmin } from "../_lib/admin-auth.js";
+import { createAdminSupabase } from "../_lib/supabase.js";
 
 const validIcons = new Set(["transport", "insurance", "vehicles", "digital"]);
 
